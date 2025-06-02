@@ -1,6 +1,7 @@
 import DishCard from "./DishCard.jsx";
 // import "./App.css"; // Importing the CSS file for styling
 import styles from "./App.module.css"; // Importing the CSS module for styling
+import Menu from "./Menu";
 
 function App() {
   const meny = [
@@ -77,12 +78,10 @@ function App() {
 ]
 
 return ( // React component to display the menu. Kind of foreach looping through the meny array and rendering a DishCard for each product.
-  <div className={styles.container}> 
-    {meny.map(product => {
-        return <DishCard key={product.id} data={product} />
-      })}
-  </div>
-)
+    <div className={styles.container}>
+      <Menu retter={meny} />
+    </div>
+  );
 }
 
 export default App;
